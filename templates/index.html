@@ -1,0 +1,236 @@
+
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<style>
+.register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
+}
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left p{
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+
+</style>
+</head>
+
+<body>
+<form action="{{ url_for('predict')}}"method="get">
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <h2>Churn Modeling</h2>
+                        <h2>ML-DS,2022</h2>
+                        <br>
+                        <h3>Churn-Modelling</h3>
+                        <h3>Project7</h3>
+                        <br>
+                        <h4>Developed By Deepak Moud</h4>
+                        
+                    </div>
+                    <div class="col-md-9 register-right">
+                        
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Prediction Using All Models</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Credit Score *" name="credit" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select name="geography" class="form-control">
+                                                <option class="hidden"  selected disabled>Select Geography</option>
+                                                <option value="0">France</option>
+                                                <option value="1">Spain</option>
+                                                <option value="2">Germany</option>
+                                                
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Age *" name="age" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="Tenure *" name="tenure" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Balance *" name="balance" />
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="num_p" class="form-control" placeholder="Number of Products *" value="" />
+                                        </div>
+                                        
+                                        
+                                        
+                                        <div class="form-group">
+                                            <input type="text" name="salary" class="form-control" placeholder="Estimated Salary *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> Credit Card?
+                                                    <input type="radio" name="card" value="1" checked>
+                                                    <span> Yes </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="card" value="0">
+                                                    <span>No </span> 
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> Active Member? 
+                                                    <input type="radio" name="active" value="1" checked>
+                                                    <span> Yes </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="active" value="0">
+                                                    <span>No </span> 
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> Gender
+                                                    <input type="radio" name="gender" value="1" checked>
+                                                    <span> Male </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="0">
+                                                    <span>Female </span> 
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <select name="model1" class="form-control">
+                                                <option class="hidden"  selected disabled>Select Model</option>
+                                                <option value="0">Decision Tree</option>
+                                                <option value="1">SVM</option>
+                                                <option value="2">Random Forest</option>
+                                                <option value="3">KNN</option>
+                                                <option value="4">Naive Bayes</option>
+                                                
+                                            </select>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                        <input type="submit" class="btnRegister"  value="Predict"/>
+                                        </div>
+                                </div><center>{{ prediction_text }}</center>
+                               
+                            
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+              
+                    </form>
+                    
+                    
+    </body>
+</html>
+              
